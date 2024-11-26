@@ -12,7 +12,7 @@ interface CreateConsultaProps{
 
 class CreateConsultaService{
     async execute({ name, email, pago, tipo_pagamento, valor, condicao }: CreateConsultaProps) {
-        if (!name || !email || pago === undefined || !tipo_pagamento || !valor || !condicao) {
+        if (!name || !email || !pago || !tipo_pagamento || !valor || !condicao) {
             throw new Error("Preencha todos os campos obrigatórios");
         }
         const consulta = await prismaClient.consulta.create({

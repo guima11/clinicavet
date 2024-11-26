@@ -14,15 +14,15 @@ datasource db {
 }
 
 model Consulta {
-    id String @id @default(auto()) @map("_id") @db.ObjectId
-    name String
-    email String
-    pago Boolean
-    tipo_pagamento String
-    valor Float
-    condicao String
-    created_at DateTime? @default(now())
-    updated_at DateTime? @default(now())
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String
+  pago           Boolean
+  tipo_pagamento String
+  valor          Float
+  condicao       String
+  created_at     DateTime? @default(now())
+  updated_at     DateTime? @default(now())
 
-    @@map("consulta")
+  @@map("consulta")
 }

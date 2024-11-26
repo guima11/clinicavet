@@ -2,6 +2,7 @@ import {FastifyInstance, FastifyPluginOptions, FastifyRequest, FastifyReply } fr
 import {CreateConsultaController} from "./controllers/CreateConsultaController";
 import {ListConsultaController} from './controllers/ListConsultaController';
 import {DeleteConsultaController} from "./controllers/DeleteConsultaController";
+import 'dotenv/config';
 
 export async function routes(fastify: FastifyInstance, options: FastifyPluginOptions) {
     fastify.post("/consulta", async (request: FastifyRequest, reply: FastifyReply) => {

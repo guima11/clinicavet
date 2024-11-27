@@ -1,6 +1,8 @@
-import Fastify from 'fastify';
 import cors from '@fastify/cors';
+import 'dotenv/config';
+import Fastify from 'fastify';
 import { routes } from './routes';
+
 
 const app = Fastify({logger: true})
 
@@ -10,7 +12,7 @@ app.setErrorHandler((error, request, reply) => {
 
 const start = async () => {
 
-    await app.register(cors);
+    app.register(cors, {origin:true});
     await app.register(routes);
 
     try{

@@ -91,10 +91,10 @@ export default function App() {
   return (
       <div className="w-full min-h-screen bg-amber-100 flex justify-center px-4">
         <main className="my-10 w-full md:max-w-2xl">
-          <h1 className="text-4xl font-medium text-white">Pacientes</h1>
+          <h1 className="text-4xl font-medium text-black">Pacientes</h1>
 
           <form className="flex flex-col my-6" onSubmit={handleSubmit}>
-            <label className="font-medium text-white">Nome:</label>
+            <label className="font-medium text-black">Nome:</label>
             <input
                 type="text"
                 placeholder="Digite seu nome completo..."
@@ -102,7 +102,7 @@ export default function App() {
                 ref={nameRef}
             />
 
-            <label className="font-medium text-white">Email:</label>
+            <label className="font-medium text-black">Email:</label>
             <input
                 type="email"
                 placeholder="Digite seu email..."
@@ -110,10 +110,10 @@ export default function App() {
                 ref={emailRef}
             />
 
-            <label className="font-medium text-white">Pago:</label>
+            <label className="font-medium text-black">Pago:</label>
             <input type="checkbox" className="mb-5" ref={pagoRef} />
 
-            <label className="font-medium text-white">Tipo de pagamento:</label>
+            <label className="font-medium text-black">Tipo de pagamento:</label>
             <input
                 type="text"
                 placeholder="Digite a forma de pagamento..."
@@ -121,7 +121,7 @@ export default function App() {
                 ref={tipoPagamentoRef}
             />
 
-            <label className="font-medium text-white">Valor:</label>
+            <label className="font-medium text-black">Valor:</label>
             <input
                 type="text"
                 placeholder="Digite o valor..."
@@ -129,7 +129,7 @@ export default function App() {
                 ref={valorRef}
             />
 
-            <label className="font-medium text-white">Condição:</label>
+            <label className="font-medium text-black">Condição:</label>
             <input
                 type="text"
                 placeholder="Digite sua condição..."
@@ -139,7 +139,7 @@ export default function App() {
 
             <button
                 type="submit"
-                className="cursor-pointer w-full p-2 bg-green-300 rounded font-medium text-white"
+                className="cursor-pointer w-full p-2 bg-green-300 rounded font-medium text-black"
             >
               Cadastrar
             </button>

@@ -16,7 +16,7 @@ Outras ferramentas: npm, dotenv
 
 André Santana
 
-Anielle Saionara
+Anielly Sayonara
 
 Lucas Guimarães
 

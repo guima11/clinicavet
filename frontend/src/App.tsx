@@ -89,7 +89,7 @@ export default function App() {
   }
 
   return (
-      <div className="w-full min-h-screen bg-gray-900 flex justify-center px-4">
+      <div className="w-full min-h-screen bg-amber-100 flex justify-center px-4">
         <main className="my-10 w-full md:max-w-2xl">
           <h1 className="text-4xl font-medium text-white">Pacientes</h1>
 
@@ -139,7 +139,7 @@ export default function App() {
 
             <button
                 type="submit"
-                className="cursor-pointer w-full p-2 bg-green-500 rounded font-medium text-white"
+                className="cursor-pointer w-full p-2 bg-green-300 rounded font-medium text-white"
             >
               Cadastrar
             </button>
@@ -173,7 +173,7 @@ export default function App() {
                   </p>
 
                   <button
-                      className="bg-red-500 w-7 h-7 flex items-center justify-center rounded-lg absolute right-0 -top-2"
+                      className="bg-indigo-300 w-7 h-7 flex items-center justify-center rounded-lg absolute right-0 -top-2"
                       onClick={() => handleDelete(consulta.id)}
                   >
                     <FiTrash size={18} color="#FFF" />

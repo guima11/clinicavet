@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, FormEvent } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { FiTrash } from 'react-icons/fi';
 import { api } from './services/api';
 
@@ -42,7 +42,7 @@ export default function App() {
     const email = emailRef.current?.value.trim();
     const pago = pagoRef.current?.checked || false;
     const tipo_pagamento = tipoPagamentoRef.current?.value.trim();
-    const valor = valorRef.current?.value.trim();
+    const valor = parseFloat(valorRef.current?.value.trim() || '0');
     const condicao = condicaoRef.current?.value.trim();
 
     if (!name || !email || !tipo_pagamento || !valor || !condicao) {
@@ -60,6 +60,9 @@ export default function App() {
         condicao,
       });
 
+      console.log('Consulta cadastrada com sucesso:', response.data);
+
+      // Atualiza a lista de consultas no estado
       setConsultas((prevConsultas) => [...prevConsultas, response.data]);
 
       if (nameRef.current) nameRef.current.value = '';
@@ -68,10 +71,8 @@ export default function App() {
       if (tipoPagamentoRef.current) tipoPagamentoRef.current.value = '';
       if (valorRef.current) valorRef.current.value = '';
       if (condicaoRef.current) condicaoRef.current.value = '';
-
-      console.log('Consulta cadastrada com sucesso:', response.data);
-    } catch (error) {
-      console.error('Erro ao cadastrar consulta:', error);
+    } catch (error: any) {
+      console.error('Erro ao cadastrar consulta:', error.response?.data || error.message);
     }
   }
 
@@ -79,7 +80,6 @@ export default function App() {
     try {
       await api.delete('/consulta', { params: { id } });
 
-      // Atualizar lista de consultas
       setConsultas((prevConsultas) =>
           prevConsultas.filter((consulta) => consulta.id !== id)
       );
@@ -185,3 +185,6 @@ export default function App() {
       </div>
   );
 }
+
+
+
